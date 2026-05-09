@@ -1,0 +1,73 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Paciente {
+  id        Int      @id @default(autoincrement())
+  nome      String
+  email     String   @unique
+  telefone  String?
+
+  exercicios    Exercicio[]
+  sessoes       Sessao[]
+  evolucoes     Evolucao[]
+  agendamentos  Agendamento[]
+  notificacoes  Notificacao[]
+}
+
+model Usuario {
+  id      Int    @id @default(autoincrement())
+  nome    String
+  email   String @unique
+  celular String
+  senha   String
+  tipo    String
+}
+
+model Exercicio {
+  id          Int      @id @default(autoincrement())
+  nome        String
+  descricao   String
+  repeticoes  String
+  pacienteId  Int
+  paciente    Paciente @relation(fields: [pacienteId], references: [id])
+}
+
+model Sessao {
+  id          Int      @id @default(autoincrement())
+  data        DateTime
+  observacoes String?
+  pacienteId  Int
+  paciente    Paciente @relation(fields: [pacienteId], references: [id])
+}
+
+model Evolucao {
+  id          Int      @id @default(autoincrement())
+  descricao   String
+  progresso   String
+  data        DateTime @default(now())
+  pacienteId  Int
+  paciente    Paciente @relation(fields: [pacienteId], references: [id])
+}
+
+model Agendamento {
+  id          Int      @id @default(autoincrement())
+  data        DateTime
+  status      String
+  pacienteId  Int
+  paciente    Paciente @relation(fields: [pacienteId], references: [id])
+}
+
+model Notificacao {
+  id          Int      @id @default(autoincrement())
+  mensagem    String
+  data        DateTime @default(now())
+  lida        Boolean  @default(false)
+  pacienteId  Int
+  paciente    Paciente @relation(fields: [pacienteId], references: [id])
+}
