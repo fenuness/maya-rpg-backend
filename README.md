@@ -195,23 +195,23 @@ O Docker Compose realiza:
 
 ## Containers rodando
 
-![Docker](images/docker.png)
+![Docker](images/docker.png.jpeg)
 
 ## POST Paciente
 
-![Post](images/post.png)
+![Post](images/post.jpeg)
 
 ## GET Pacientes
 
-![Get](images/get.png)
+![Get](images/get.jpeg)
 
 ## PUT Paciente
 
-![Put](images/put.png)
+![Put](images/put.jpeg)
 
 ## DELETE Paciente
 
-![Delete](images/delete.png)
+![Delete](images/delete.jpeg)
 
 
 
