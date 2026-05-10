@@ -69,9 +69,11 @@ DATABASE_URL="mysql://root:123456@localhost:3306/maya_rpg"
 ---
 
 ## 2. Rodar o projeto
+## Caso a porta 3002 esteja em uso, altere a porta no docker-compose.yml.
 
 ```bash
 docker-compose up --build
+
 ```
 
 ---
