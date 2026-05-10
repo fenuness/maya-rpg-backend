@@ -197,17 +197,21 @@ O Docker Compose realiza:
 
 ![Docker](images/docker.png)
 
+## POST Paciente
 
-## CRUD rodando
+![Post](images/post.png)
 
-![Put](images/put)
+## GET Pacientes
 
-![Get](images/get)
+![Get](images/get.png)
 
-![Post](images/post)
+## PUT Paciente
 
-![Delete](images/delete)
+![Put](images/put.png)
 
+## DELETE Paciente
+
+![Delete](images/delete.png)
 
 
 
